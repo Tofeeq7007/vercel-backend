@@ -13,7 +13,7 @@ import User_router from './src/routes/user.routes.js';
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin:'http://localhost:5173', // your react app
+    origin:process.env.FRONTEND_URL, // your react app
     credentials:true // this allow to cookie send
 }))
 
