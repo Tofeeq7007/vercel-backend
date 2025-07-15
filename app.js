@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/user' , User_router)
 app.get("/:id", redirectFromShortUrl)
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     connectDb();
     console.log("I am currently Port http://localhost:3000");
     
