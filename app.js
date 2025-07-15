@@ -24,6 +24,9 @@ app.use(express.urlencoded({extended:true}))
 app.use("/api/create" , router);
 app.use("/api/auth" , authRoutes);
 app.use('/api/user' , User_router)
+app.use("/", (req,res)=>{
+    res.send("Welcome frontend")
+})
 app.get("/:id", redirectFromShortUrl)
 app.listen(process.env.PORT,()=>{
     connectDb();
