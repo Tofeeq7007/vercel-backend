@@ -23,9 +23,6 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/api/create" , router);
 app.use("/api/auth" , authRoutes);
-app.get('/', (req, res) => {
-  res.send('Welcome to Backend');
-});
 app.use('/api/user' , User_router)
 app.get("/:id", redirectFromShortUrl)
 app.listen(process.env.PORT,()=>{
