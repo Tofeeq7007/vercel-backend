@@ -12,10 +12,7 @@ import User_router from './src/routes/user.routes.js';
 
 dotenv.config();
 const app = express();
-app.use(cors({
-    origin:process.env.FRONTEND_URL, // your react app
-    credentials:true // this allow to cookie send
-}))
+app.use(cors());
 
 
 app.use(express.json());
@@ -23,7 +20,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/api/create" , router);
 app.use("/api/auth" , authRoutes);
-app.use('/api/user' , User_router)
+app.use('/api/user' , User_router);
 app.get("/:id", redirectFromShortUrl)
 app.listen(process.env.PORT,()=>{
     connectDb();
