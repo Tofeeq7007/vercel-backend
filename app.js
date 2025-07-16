@@ -25,6 +25,11 @@ app.use(cookieParser())
 app.use("/api/create" , router);
 app.use("/api/auth" , authRoutes);
 app.use('/api/user' , User_router);
+app.get('/test', (req, res) => {
+  console.log("Cookies:", req.cookies);
+  res.send("Check your console for cookies");
+});
+
 app.get("/:id", redirectFromShortUrl)
 app.listen(process.env.PORT,()=>{
     connectDb();
