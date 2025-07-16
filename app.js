@@ -12,7 +12,10 @@ import User_router from './src/routes/user.routes.js';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://vercel-frontend-smoky.vercel.app", // ⬅️ Replace with your frontend domain
+  credentials: true               // ⬅️ Important for cookies
+}));
 
 
 app.use(express.json());
