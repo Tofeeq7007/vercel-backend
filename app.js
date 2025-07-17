@@ -14,7 +14,7 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: "https://vercel-frontend-smoky.vercel.app", // ⬅️ Replace with your frontend domain
+  origin: "https://vercel-frontend-one-phi.vercel.app", // ⬅️ Replace with your frontend domain
   credentials: true               // ⬅️ Important for cookies
 }));
 
